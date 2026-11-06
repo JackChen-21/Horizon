@@ -2,21 +2,30 @@
   "ai": {
     "provider": "openai",
     "model": "deepseek-chat",
-    "base_url": "${HORIZON_AI_BASE_URL}",
-    "api_key": "${HORIZON_AI_API_KEY}"
+    "api_key_env": "HORIZON_AI_API_KEY",
+    "base_url": "${HORIZON_AI_BASE_URL}"
   },
   "email": {
     "enabled": true,
     "smtp_server": "smtp.qq.com",
     "smtp_port": 465,
     "smtp_username": "3524044573@qq.com",
-    "password_env": "EMAIL_PASSWORD",
     "email_address": "3524044573@qq.com",
+    "password_env": "EMAIL_PASSWORD",
     "sender_name": "Horizon 每日科技雷达",
-    "imap_enabled": false
+    "imap_enabled": false,
+    "imap_server": "imap.qq.com",
+    "imap_port": 993
   },
   "sources": {
-    "hackernews": { "enabled": true },
-    "rss": { "enabled": true }
+    "hackernews": {
+      "enabled": true
+    },
+    "rss": [
+      {
+        "name": "Solidot",
+        "url": "https://www.solidot.org/index.rss"
+      }
+    ]
   }
 }
