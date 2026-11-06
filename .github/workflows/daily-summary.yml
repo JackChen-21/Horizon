@@ -35,8 +35,9 @@ jobs:
           HORIZON_AI_API_KEY: ${{ secrets.HORIZON_AI_API_KEY }}
           HORIZON_AI_BASE_URL: ${{ secrets.HORIZON_AI_BASE_URL }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        # 修改为正确的写法：
         run: |
-          uv run horizon run
+          uv run horizon --config data/config.json
 
       - name: Commit and push generated summaries
         run: |
